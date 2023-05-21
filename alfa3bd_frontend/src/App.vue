@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import Dashboard from './components/Dashboard.vue'
+import SchoolList from './components/SchoolList.vue'
 </script>
 
 <template>
@@ -8,6 +9,7 @@ import Dashboard from './components/Dashboard.vue'
     <div class="topnav">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/dashboard">Dashboard</RouterLink>
+      <RouterLink to="/schoollist">SchoolList</RouterLink>
       <RouterLink to="/about">About</RouterLink>
     </div>
     <div class="wrapper">

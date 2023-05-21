@@ -1,9 +1,9 @@
-<template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+<script setup lang="ts">
+</script>
 
-   <table class="table">
+<template>
+  <main>
+    <table class="table">
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
@@ -64,15 +64,5 @@
     </tr>
   </tbody>
 </table>
-
+  </main>
 </template>
-
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
