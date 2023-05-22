@@ -2,7 +2,19 @@
 
 
 ## Rodar o projeto em producao
+### 1. Configurar Docker
+```sh
+sudo apt install docker docker-compose
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+sudo chmod g+rwx "$HOME/.docker" -R
+```
+### 2. Rodar os containers
+```sh
 sudo docker-compose up
+```
 
 ## Rodar o projeto em Desenvolvimento
 ### Backend
