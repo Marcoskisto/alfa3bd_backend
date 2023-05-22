@@ -1,19 +1,12 @@
 # **Projeto ALFA3-BD**
 
-https://sites.google.com/view/projeto-alfa3-bd-julioroncal/home
 
-https://sites.google.com/view/marcos-calixto
+## Rodar o projeto em producao
+sudo docker-compose up
 
-https://sites.google.com/view/stephanie-russo/projetos
-
-https://sites.google.com/view/lucas-lima
-
-https://sites.google.com/view/rafael-giannico
-
-https://sites.google.com/view/luisfeliperezende/
-
-https://sites.google.com/view/indicesindividuais-jose-g-a-jr/
-
-https://sites.google.com/view/cecilia-maia/
-
-https://sites.google.com/view/matheusmota/
+## Rodar o projeto em Desenvolvimento
+### Backend
+1. Rodar o Banco de dados mongo - [Readme.md do alfa3bd_backend](./alfa3bd_backend/Readme.md)
+2. Rodar o backend em django - [Readme.md do alfa3bd_backend](./alfa3bd_backend/Readme.md)
+### Frontend
+Rodar o frontend - [Readme.md do alfa3bd_backend](./alfa3bd_frontend/README.md)

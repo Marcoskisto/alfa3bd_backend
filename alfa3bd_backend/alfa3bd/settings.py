@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,6 +25,7 @@ SECRET_KEY = 'django-insecure-=d7b_8z=yko-2%=z6xbw*t81bxbk!-!mstt*zl-+d*m%n#t8#(
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+LOCALHOST = False if os.environ.get('ALFA3BD_DOCKER_ENV') else True
 
 ALLOWED_HOSTS = []
 
@@ -77,10 +79,17 @@ WSGI_APPLICATION = 'alfa3bd.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'db-name',
+        "ENGINE": "djongo",
+        "NAME": os.environ.get('MONGO_DB_NAME'),
+        "CLIENT": {
+            "host": 'localhost' if LOCALHOST else os.environ.get('MONGO_DB_HOST'),
+            "port": 27017,
+            "username": None if LOCALHOST else os.environ.get('MONGO_DB_USERNAME'),
+            "password": None if LOCALHOST else os.environ.get('MONGO_DB_PASSWORD'),
+        },
     }
 }
 

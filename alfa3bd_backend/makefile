@@ -2,10 +2,10 @@ run:
 	pyhthon manage.py runserver
 
 create_mongodb:
-	docker run -d -p 27017:27017 --name alfa3bd-mongo mongo:latest
+	docker run -d -p 27017:27017 --name mongo-alfa3bd-debug mongo:latest
 
 start_mongodb:
-	docker start alfa3bd-mongo
+	docker start mongo-alfa3bd-debug
 
 configure: clean
 	python manage.py makemigrations escola

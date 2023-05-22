@@ -4,11 +4,22 @@ This template should help get you started developing with Vue 3 in Vite.
 
 ## Project Setup
 
+### Install node
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+source ~/.bashrc
+nvm install 18.16.0
+```
+### Configurar o frontend
+
 ```sh
 cd alfa3bd_frontend
 npm install
+```
+### Rodar o frontend
+```sh
 npm run dev
-
 ```
 
 ## Rodar a aplicacao em docker
