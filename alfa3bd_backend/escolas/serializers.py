@@ -14,7 +14,7 @@ class UnidadeEscolarSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.UnidadeEscolar
         fields = [
-            'codigo_inep', 'nome', 'unidade_federacao', 'municipio', 'cep',
+            'codigo_inep', 'nome',
             'endereco', 'categoria_administrativa',
             'dependencia_administrativa',
         ]
@@ -91,3 +91,9 @@ class NodeSerializer(serializers.HyperlinkedModelSerializer):
         fields = [
             'node_ip', 'node_port',
         ]
+
+
+class EscolasCSVFileSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = models.EscolasCSVFile
+        fields = ['file_data', ]

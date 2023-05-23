@@ -27,6 +27,8 @@ router.register(r'contratos', views.Contrato)
 router.register(r'intraestrutura', views.Infraestrutura)
 router.register(r'node', views.Node)
 router.register(r'relatorios', views.Relatorio, basename='relatorios')
+router.register(r'escolas_csv_file', views.EscolasCSVFile)
+
 
 urlpatterns = [
     path('', include(router.urls)),

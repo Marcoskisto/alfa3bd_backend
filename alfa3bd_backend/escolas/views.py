@@ -3,7 +3,7 @@ from django.utils import timezone
 from rest_framework import viewsets
 from rest_framework.response import Response
 
-from escolas import models
+from escolas import models, utils
 from escolas import serializers
 
 
@@ -51,3 +51,14 @@ class Relatorio(viewsets.ViewSet):
         list_relatorio = [escola_infraestrutura]
 
         return Response(list_relatorio)
+
+
+class EscolasCSVFile(viewsets.ModelViewSet):
+    queryset = models.EscolasCSVFile.objects.all()
+    serializer_class = serializers.EscolasCSVFileSerializer
+
+    def create(self, request, *args, **kwargs):
+        file = request.data['file_data']  # type: ignore
+        utils.update_database(file)
+        return super().create(request, *args, **kwargs)
+    
