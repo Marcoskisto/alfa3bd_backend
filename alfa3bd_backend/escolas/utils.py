@@ -21,10 +21,12 @@ def update_database(csv_file):
         unid_federativa = models.UnidadeFederativa[_uf_sigla]
 
         municipio_nome = unidecode(file['Município'][i]).upper()
-        municipio = models.Municipio.objects.get_or_create(
-            nome=municipio_nome,
-            unidade_federativa=unid_federativa
-        )[0]
+        municipio, _ = models.Municipio.objects.get_or_create(
+            **{
+            'nome':municipio_nome,
+            'unidade_federativa': unid_federativa.value
+            }
+        )
 
         codigo_inpe = file['Código INEP'][i]
         nome_escola = file['Escola'][i]
@@ -44,5 +46,6 @@ def update_database(csv_file):
             categoria_administrativa=categoria_admin,
             dependencia_administrativa=dependencia_admin
         )[0]
+        unidade_escolar.save()
 
         print(f'Linha: {i} - COD INEP: {unidade_escolar.codigo_inep}')
